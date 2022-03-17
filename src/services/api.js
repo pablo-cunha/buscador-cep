@@ -1,3 +1,7 @@
 import axios from "axios"
 
-const baseUrl = axios.createate
+const api = axios.create({
+    baseURL: "https://viacep.com.br/ws/"
+})
+
+export default api
