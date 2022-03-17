@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+
+body {
+    background: linear-gradient(to right, #000428, #004e92);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+    font-size: 85px;
+    color: #f0f0f0;
+    animation: flipTitle 1s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.input-container {
+    background-color: #f0f0f0f0;
+    padding: 15px;
+    margin: 34px;
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 2px 4px 10px #000;
 }
 
-.App-link {
-  color: #61dafb;
+.input-container input {
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    color: #0f0f0f;
+    outline: none;
+    margin-right: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-container input::placeholder {
+    color: #0f0f0f;
+}
+
+.search-button {
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.search-button:hover {
+    transform: scale(1.2);
+}
+
+.main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    width: 500px;
+    border-radius: 8px;
+}
+
+.main-box h2 {
+    margin: 16px 0;
+    font-size: 30px;
+}
+
+.main-box span {
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+@media(max-width: 620px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .main-box h2 {
+        font-size: 28px;
+    }
+
+    .main-box {
+        min-height: 250px;
+        width: 80%;
+    }
+}
+
+@keyframes flipTitle {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
 }
