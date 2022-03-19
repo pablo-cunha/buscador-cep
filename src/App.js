@@ -1,8 +1,9 @@
-import { FiSearch } from 'react-icons/fi'
 import { useState } from 'react'
 import './App.css'
 import api from './services/api'
+import { FiSearch } from 'react-icons/fi'
 import Main from './components/Main'
+import Button from './components/Button'
 
 function App() {
 
@@ -37,9 +38,7 @@ function App() {
         value={input}
         onChange={(event) => setInput(event.target.value)}
         />
-      <button className="search-button" onClick={handleClick}>
-        <FiSearch size={25} color="#0f0f0f"/>
-      </button>
+        <Button onClick={handleClick}/>
       </div>
 
       {Object.keys(responseCep).length > 1 && (
