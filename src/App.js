@@ -2,6 +2,7 @@ import { FiSearch } from 'react-icons/fi'
 import { useState } from 'react'
 import './App.css'
 import api from './services/api'
+import Main from './components/Main'
 
 function App() {
 
@@ -42,14 +43,7 @@ function App() {
       </div>
 
       {Object.keys(responseCep).length > 1 && (
-      <main className="main-box">
-        <h2>CEP: {responseCep.cep}</h2>
-
-        <span>{responseCep.logradouro}</span>
-        <span>{responseCep.complemento}</span>
-        <span>{responseCep.bairro}</span>
-        <span>{responseCep.localidade} - {responseCep.uf}</span>
-      </main>
+        <Main response={responseCep}/>
       )}
     </div>
   );
