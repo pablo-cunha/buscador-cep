@@ -4,6 +4,7 @@ import api from './services/api'
 import { FiSearch } from 'react-icons/fi'
 import Main from './components/Main'
 import Button from './components/Button'
+import Input from './components/Input'
 
 function App() {
 
@@ -30,17 +31,9 @@ function App() {
   return (
     <div className="container">
       <h1 className="title">Buscador CEP</h1>
-
-      <div className="input-container">
-        <input
-        type="text"
-        placeholder="Digite o CEP..."
-        value={input}
-        onChange={(event) => setInput(event.target.value)}
-        />
-        <Button onClick={handleClick}/>
-      </div>
-
+      <Input type="text" placeholder="Digite o CEP..." value={input} 
+      onChange={(event) => setInput(event.target.value)}
+      onClick={handleClick}/>
       {Object.keys(responseCep).length > 1 && (
         <Main response={responseCep}/>
       )}
