@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import './App.css'
+import { useState } from 'react'
 import api from './services/api'
-import { FiSearch } from 'react-icons/fi'
 import Main from './components/Main'
-import Button from './components/Button'
+import Title from './components/Title'
 import Input from './components/Input'
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="title">Buscador CEP</h1>
+      <Title/>
       <Input type="text" placeholder="Digite o CEP..." value={input} 
       onChange={(event) => setInput(event.target.value)}
       onClick={handleClick}/>
